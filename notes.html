@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes App</title>
+  <link rel="stylesheet" href="css/notes.css" />
+</head>
+<body>
+  <header>
+    <h1>My Notes</h1>
+    <div class="header-buttons">
+      <button id="createNoteBtn">+ New Note</button>
+      <button id="logoutBtn">Logout</button>
+      <button id="themeToggleBtn">🌙</button>
+    </div>
+  </header>
+
+  <main>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search notes..."
+      style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; box-sizing: border-box"
+    />
+
+    <div id="notesContainer"></div>
+
+    <!-- pagination feature -->
+    <div id="paginationControls">
+      <button id="prevPageBtn">Previous</button>
+      <span id="pageInfo"></span>
+      <button id="nextPageBtn">Next</button>
+    </div>
+  </main>
+
+  <div id="noteModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Edit Note</h2>
+      <input type="text" id="noteTitle" placeholder="Title" />
+      <textarea id="noteContent" placeholder="Content"></textarea>
+
+      <!-- Lock Note Feature -->
+      <label style="display: block; margin-top: 10px;">
+        <input type="checkbox" id="noteLock" />
+        Lock this note with password
+      </label>
+      <input
+        type="password"
+        id="notePassword"
+        placeholder="Enter password"
+        style="display: none; margin-top: 5px; width: 100%; padding: 0.4rem; box-sizing: border-box;"
+      />
+
+      <div class="modal-actions" style="margin-top: 10px;">
+        <button id="cancelBtn">Cancel</button>
+        <button id="saveNoteBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/notes.js"></script>
+</body>
+</html>
